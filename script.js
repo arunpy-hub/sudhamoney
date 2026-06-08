@@ -5,11 +5,23 @@ document.getElementById('year').textContent = new Date().getFullYear();
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
+        const href = this.getAttribute('href');
+        if (href === '#') {
+            window.scrollTo({
+                top: 0,
                 behavior: 'smooth'
             });
+            return;
+        }
+        try {
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        } catch (err) {
+            console.error("Invalid selector:", href, err);
         }
     });
 });
@@ -65,4 +77,30 @@ if (contactForm) {
         });
     });
 }
+// Mobile menu toggle
+const menuToggle = document.querySelector('.mobile-menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = menuToggle.querySelector('i');
+        if (icon) {
+            const isMenu = icon.getAttribute('data-lucide') === 'menu';
+            icon.setAttribute('data-lucide', isMenu ? 'x' : 'menu');
+            lucide.createIcons(); // Refresh Lucide icons
+        }
+    });
+
+    // Close menu when clicking on any link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            const icon = menuToggle.querySelector('i');
+            if (icon) {
+                icon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            }
+        });
+    });
+}

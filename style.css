@@ -219,6 +219,24 @@ ul {
     padding: 8px 20px;
 }
 
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 5px;
+    outline: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu-toggle i {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
 /* ==========================================================================
    Hero Section
    ========================================================================== */
@@ -253,6 +271,35 @@ ul {
     font-size: 1.2rem;
     color: var(--text-dark);
     margin-bottom: 30px;
+}
+
+.hero-content .designation {
+    font-size: 1.35rem;
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hero-content .arn-display {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-sm);
+}
+
+.hero-content .hero-desc {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    line-height: 1.6;
 }
 
 .hero-buttons {
@@ -335,6 +382,32 @@ ul {
     font-size: 1.1rem;
     color: var(--text-dark);
     margin-bottom: 20px;
+}
+
+.about-designation {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-top: -10px;
+    margin-bottom: 8px;
+}
+
+.about-arn {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+
+.sebi-disclaimer {
+    background-color: var(--bg-light);
+    border-left: 4px solid var(--primary-color);
+    padding: 20px;
+    text-align: left;
+    font-size: 0.95rem;
+    margin-top: 30px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: var(--shadow-sm);
 }
 
 .credentials {
@@ -423,6 +496,30 @@ ul {
     border-color: var(--primary-color);
 }
 
+.consent-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.consent-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.consent-label {
+    font-size: 0.85rem;
+    color: #cbd5e0;
+    line-height: 1.4;
+    cursor: pointer;
+    user-select: none;
+}
+
 /* ==========================================================================
    Footer
    ========================================================================== */
@@ -448,7 +545,148 @@ ul {
     font-size: 0.9rem;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+}
+
+.footer-designation {
+    color: var(--bg-white);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-links {
+    margin-top: 5px;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer .disclaimer.text-muted {
+    color: #555;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   Subpages Layout (Disclosures, Privacy, Terms)
+   ========================================================================= */
+.content-page {
+    padding-top: 140px; /* Account for navbar */
+    padding-bottom: 80px;
+    background-color: var(--bg-white);
+    min-height: 80vh;
+}
+
+.content-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content-container h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.content-container .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.content-body h2 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-top: 35px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--bg-light);
+    padding-bottom: 8px;
+}
+
+.content-body h3 {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.content-body p, .content-body ul {
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+.content-body ul {
+    padding-left: 20px;
+    list-style-type: disc;
+    margin-bottom: 25px;
+}
+
+.content-body li {
+    margin-bottom: 8px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin: 25px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.disclosure-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+.disclosure-table th, .disclosure-table td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.disclosure-table tr:last-child td {
+    border-bottom: none;
+}
+
+.disclosure-table th {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.compliance-box {
+    background-color: var(--bg-light);
+    border-left: 4px solid var(--secondary-color);
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.compliance-box h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.compliance-box p:last-child {
+    margin-bottom: 0;
 }
 
 /* ==========================================================================
@@ -458,6 +696,7 @@ ul {
     .hero-container {
         flex-direction: column;
         text-align: center;
+        gap: 30px;
     }
     
     .hero-content h1 {
@@ -474,15 +713,74 @@ ul {
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* In a real app, implement a hamburger menu here */
+    .mobile-menu-toggle {
+        display: flex;
     }
-    
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        position: fixed;
+        top: 80px; /* height of header navbar */
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-white);
+        box-shadow: var(--shadow-lg);
+        padding: 30px 20px;
+        transform: translateY(-200%);
+        transition: transform var(--transition-normal);
+        z-index: 999;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
     .hero-content h1 {
         font-size: 2rem;
     }
-    
+
+    .hero-content .designation {
+        font-size: 1.15rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
     .section-padding {
         padding: 50px 0;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+    }
+
+    .contact-info, .contact-form-wrapper {
+        padding: 30px 20px;
+    }
+
+    .footer-bottom {
+        align-items: center;
+        text-align: center;
     }
 }
